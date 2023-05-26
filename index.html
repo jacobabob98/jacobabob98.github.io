@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toorak Cellars</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,500;0,800;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- fontawesome -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/tailwind.css" />
+    <link rel="stylesheet" href="css/tooplate-antique-cafe.css" />
+    <script type="text/javascript">
+      window.onload = function () {
+        var delay = 0;
+        var elements = document.querySelectorAll(".slideLoad"); // Change this to select the right elements
+
+        elements.forEach(function (element) {
+          delay += 500; // Increase the delay for each element
+          setTimeout(function () {
+            element.classList.remove("hidden");
+            element.classList.add("slideDown");
+          }, delay);
+        });
+      };
+
+      window.addEventListener("scroll", function () {
+        // Get all sections
+        var sections = document.querySelectorAll(".container > div");
+
+        sections.forEach(function (section) {
+          // Get the dimensions of the section
+          var bounding = section.getBoundingClientRect();
+
+          // Check if the section is in the viewport
+          if (bounding.top < window.innerHeight && bounding.bottom > 0) {
+            // The section is in the viewport
+            // Increase size and opacity
+            section.style.transform = "scale(1.0)";
+            section.style.opacity = "1";
+          } else {
+            // The section is not in the viewport
+            // Decrease size and opacity
+            section.style.transform = "scale(0.8)";
+            section.style.opacity = "0.5";
+          }
+        });
+      });
+    </script>
+
+    <!--
+
+Tooplate 2126 Antique Cafe
+
+https://www.tooplate.com/view/2126-antique-cafe
+
+-->
+  </head>
+  <body>
+    <!-- Intro -->
+    <div
+      id="intro"
+      class="parallax-window"
+      data-parallax="scroll"
+      data-image-src="img/cellar-intro.jpg"
+    >
+      <nav id="tm-nav" class="fixed w-full">
+        <div class="tm-container mx-auto px-2 md:py-6 text-right">
+          <button class="md:hidden py-2 px-2" id="menu-toggle">
+            <i class="fas fa-2x fa-bars tm-text-gold"></i>
+          </button>
+          <ul
+            id="navbar"
+            class="mb-3 md:mb-0 text-2xl font-normal flex justify-end flex-col md:flex-row"
+          >
+            <li class="inline-block mb-4 mx-4">
+              <a href="#intro" class="tm-text-gold py-1 md:py-3 px-4">Intro</a>
+            </li>
+            <li class="inline-block mb-4 mx-4">
+              <a href="#wines" class="tm-text-gold py-1 md:py-3 px-4">Wines</a>
+            </li>
+            <li class="inline-block mb-4 mx-4">
+              <a href="#bookings" class="tm-text-gold py-1 md:py-3 px-4"
+                >Bookings</a
+              >
+            </li>
+            <li class="inline-block mb-4 mx-4">
+              <a href="#functions" class="tm-text-gold py-1 md:py-3 px-4"
+                >Functions</a
+              >
+            </li>
+            <li class="inline-block mb-4 mx-4">
+              <a href="#contact" class="tm-text-gold py-1 md:py-3 px-4"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container mx-auto px-2 tm-intro-width">
+        <div class="sm:pb-60 sm:pt-48 py-20">
+          <div
+            class="hidden slideLoad bg-black bg-opacity-80 p-12 mb-5 text-center rounded-lg"
+          >
+            <h1
+              class="text-white wobble hover:text-yellow-500 text-5xl tm-logo-font mb-5"
+            >
+              <a href="#bookings">Toorak Cellars</a>
+            </h1>
+            <p class="tm-text-gold tm-text-2xl">savouring timeless elegance</p>
+          </div>
+          <div
+            class="hidden slideLoad bg-black bg-opacity-80 p-10 mb-5 rounded-lg"
+          >
+            <p class="text-white text-center leading-8 text-xl font-light">
+              Our carefully curated selection showcases the finest wines from
+              all around the globe, offering you the opportunity to sample our
+              collection either by the glass or the bottle. From the mellow
+              whispers of aged reds to the vibrant notes of youthful whites and
+              rosés, we are dedicated to creating an experience that elevates
+              and educates your palate.
+            </p>
+          </div>
+          <div class="text-center">
+            <div class="inline-block">
+              <a
+                href="#wines"
+                class="hidden slideLoad wobble flex justify-center items-center bg-black bg-opacity-80 py-6 px-8 rounded-lg font-semibold tm-text-2xl tm-text-gold hover:text-gray-200 transition"
+              >
+                <i class="fa fa-glass mr-3 pulse"> </i>
+                <span class="pulse">Let's explore...</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Wine Selection -->
+    <div
+      id="wines"
+      class="parallax-window"
+      data-parallax="scroll"
+      data-image-src="img/half_wine.jpg"
+    >
+      <div class="container mx-auto tm-container py-24 sm:py-48">
+        <div class="text-center mb-16">
+          <h2
+            class="bg-brown bg-opacity-80 tm-text-brown py-6 px-12 text-4xl font-medium inline-block rounded-md"
+          >
+            Our Current Selection
+          </h2>
+          <div
+            id="winePreference"
+            class="bg-brown bg-opacity-80 tm-text-brown py-6 px-12 text-4xl font-medium inline-block rounded-md"
+          >
+            <label for="wineType" class="text-lg sm:text-xl mb-2 sm:mb-3"
+              >Choose a wine type:</label
+            >
+            <select name="wineType" id="wineType" class="text-lg">
+              <option value="all">All</option>
+              <option value="white">White</option>
+              <option value="red">Red</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex flex-col lg:flex-row justify-around items-center">
+          <div
+            class="flex-1 m-5 rounded-xl px-4 py-6 sm:px-8 sm:py-10 bg-cream bg-opacity-80 tm-wine-container"
+            data-wine-type="white"
+          >
+            <div
+              class="flex items-start mb-6 tm-menu-item"
+              data-wine-type="white"
+            >
+              <div class="container-menu-image">
+                <img
+                  src="img/white_1.webp"
+                  alt="Chardonnay"
+                  class="rounded-lg tm-menu-image"
+                />
+              </div>
+
+              <div class="ml-3 sm:ml-6">
+                <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-brown">
+                  2016 Montalto 'Pennon Hill' Chardonnay, Mornington Peninsula
+                </h3>
+                <div class="text-grey text-md sm:text-lg font-light mb-1">
+                  Crisp, elegant Chardonnay with citrus and stone fruit tones.
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-start mb-6 tm-menu-item"
+              data-wine-type="white"
+            >
+              <div class="container-menu-image">
+                <img
+                  src="img/white_2.webp"
+                  alt="Sauvignon Blanc"
+                  class="rounded-lg tm-menu-image"
+                />
+              </div>
+
+              <div class="ml-3 sm:ml-6">
+                <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-brown">
+                  2017 Yarra Yering 'Dry White No.1', Yarra Valley
+                </h3>
+                <div class="text-grey text-md sm:text-lg font-light mb-1">
+                  Rich, complex Semillon/Sauvignon Blanc blend. Floral with
+                  honeyed fruit notes.
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-start mb-6 tm-menu-item"
+              data-wine-type="white"
+            >
+              <div class="container-menu-image">
+                <img
+                  src="img/white_3.webp"
+                  alt="Pino Grigio"
+                  class="rounded-lg tm-menu-image"
+                />
+              </div>
+
+              <div class="ml-3 sm:ml-6">
+                <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-brown">
+                  2019 Pizzini Pinot Grigio, King Valley
+                </h3>
+                <div class="text-grey text-md sm:text-lg font-light mb-1">
+                  Light and fresh with pear and apple flavours.
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-start mb-6 tm-menu-item"
+              data-wine-type="white"
+            >
+              <div class="container-menu-image">
+                <img
+                  src="img/white_4.webp"
+                  alt="Moscato"
+                  class="rounded-lg tm-menu-image"
+                />
+              </div>
+
+              <div class="ml-3 sm:ml-6">
+                <h3 class="text-lg sm:text-xl tm-text-brown mb-1">
+                  2020 Innocent Bystander Moscato, Yarra Valley
+                </h3>
+                <div class="text-grey text-md sm:text-lg font-light mb-1">
+                  Sweet, lively, and fruity, perfect for dessert or aperitif.
+                </div>
+              </div>
+            </div>
+            <div
+              class="flex items-start mb-6 tm-menu-item"
+              data-wine-type="white"
+            >
+              <div class="container-menu-image">
+                <img
+                  src="img/white_5.webp"
+                  alt="Charonnay"
+                  class="rounded-lg tm-menu-image"
+                />
+              </div>
+
+              <div class="ml-3 sm:ml-6">
+                <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-brown">
+                  2018 De Bortoli 'Villages' Chardonnay, Yarra Valley
+                </h3>
+                <div class="text-grey text-md sm:text-lg font-light">
+                  Bright and balanced with delicate citrus and oak notes.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="flex-1 m-5 rounded-xl bg-opacity-80 px-4 py-6 sm:px-8 sm:py-10 bg-red tm-wine-container"
+            data-wine-type="red"
+          >
+            <div
+              class="flex items-start justify-end mb-6 tm-menu-item-2"
+              data-wine-type="red"
+            >
+              <div class="text-right mr-6">
+                <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">
+                  2017 Mac Forbes 'Hugh', Yarra Valley
+                </h3>
+                <div class="text-white text-md sm:text-lg font-light mb-1">
+                  Elegant Cabernet, with dark fruit and a hint of mint.
+                </div>
+              </div>
+              <div class="container-menu-image">
+                <img
+                  src="img/red_1.webp"
+                  alt="Cabernet"
+                  class="rounded-lg tm-menu-image"
+                />
+              </div>
+            </div>
+            <div
+              class="flex items-start justify-end mb-6 tm-menu-item-2"
+              data-wine-type="red"
+            >
+              <div class="text-right mr-6">
+                <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">
+                  2016 Levantine Hill 'Colleen’s Paddock' Pinot Noir, Yarra
+                  Valley
+                </h3>
+                <div class="text-white text-md sm:text-lg font-light mb-1">
+                  Light-bodied, with cherry and earthy undertones.
+                </div>
+              </div>
+              <div class="container-menu-image">
+                <img
+                  src="img/red_2.webp"
+                  alt="Pinot Noir"
+                  class="rounded-lg tm-menu-image"
+                />
+              </div>
+            </div>
+            <div
+              class="flex items-start justify-end mb-6 tm-menu-item-2"
+              data-wine-type="red"
+            >
+              <div class="text-right mr-6">
+                <h3 class="text-lg sm:text-xl mb-2 sm:mb-3 tm-text-yellow">
+                  2018 Best's Great Western Bin No.1 Shiraz, Great Western
+                </h3>
+                <div class="text-white text-md sm:text-lg font-light mb-1">
+                  Rich, robust Shiraz with blackberry and spice.
+                </div>
+              </div>
+              <div class="container-menu-image">
+                <img
+                  src="img/red_3.webp"
+                  alt="Shiraz"
+                  class="rounded-lg tm-menu-image"
+                />
+              </div>
+            </div>
+            <div
+              class="flex items-start justify-end mb-6 tm-menu-item-2"
+              data-wine-type="red"
+            >
+              <div class="text-right mr-6">
+                <h3 class="text-lg sm:text-xl tm-text-yellow mb-1">
+                  2015 Mount Langi Ghiran 'Langi' Shiraz, Grampians
+                </h3>
+                <div class="text-white text-md sm:text-lg font-light">
+                  Complex, full-bodied with dark fruits and pepper notes.
+                </div>
+              </div>
+              <div class="container-menu-image">
+                <img
+                  src="img/red_4.webp"
+                  alt="Shiraz"
+                  class="rounded-lg tm-menu-image"
+                />
+              </div>
+            </div>
+            <div
+              class="flex items-start justify-end mb-6 tm-menu-item-2"
+              data-wine-type="red"
+            >
+              <div class="text-right mr-6">
+                <h3 class="text-lg sm:text-xl tm-text-yellow mb-1">
+                  2019 Yering Station 'Village' Pinot Noir, Yarra Valley
+                </h3>
+                <div class="text-white text-md sm:text-lg font-light">
+                  Bright red fruit and silky tannins.
+                </div>
+              </div>
+              <div class="container-menu-image">
+                <img
+                  src="img/red_5.webp"
+                  alt="Pino Noir"
+                  class="rounded-lg tm-menu-image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+          <!-- The Close Button -->
+          <span class="close">&times;</span>
+          <!-- Modal Content (The Image) -->
+          <img class="modal-content" id="img01" />
+        </div>
+        <div class="text-center mb-16">
+          <div class="inline-block">
+            <a
+              href="https://www.opentable.com.au/r/toorak-cellars-reservations-armadale?lang=en-AU&ot_source=Restaurant%20website&restref=164051"
+              class="flex wobble justify-center items-center bg-white bg-opacity-80 py-6 px-8 rounded-lg font-medium tm-text-2xl tm-text-brown hover:text-yellow-600 transition pulse"
+            >
+              <i class="fa fa-calendar-plus-o mr-4"></i>
+              <span>Make a Booking</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="bookings"
+      class="parallax-window"
+      data-parallax="scroll"
+      data-image-src="img/about-bg.jpg"
+    >
+      <div class="container mx-auto tm-container pt-24 pb-48 sm:py-48">
+        <div
+          class="flex flex-col lg:flex-row justify-around items-center lg:items-stretch"
+        >
+          <div
+            class="flex-1 rounded-xl p-12 pb-14 m-5 bg-black bg-opacity-70 tm-item-container"
+          >
+            <img src="img/toorak_cellar_logo.png" alt="Image" class="mx-auto" />
+          </div>
+          <div
+            class="flex-1 rounded-xl px-10 py-12 m-5 bg-white bg-opacity-80 tm-item-container"
+          >
+            <h2 class="mb-6 tm-text-green text-4xl font-medium">
+              We'd Love to Have You!
+            </h2>
+            <p class="mb-6 text-lg leading-8">
+              Toorak Cellars is located on Beatty Avenue, Armadale. We are open
+              <strong>8am-11pm</strong> most days, bookings are essential!
+            </p>
+            <a
+              href="https://www.opentable.com.au/r/toorak-cellars-reservations-armadale?lang=en-AU&ot_source=Restaurant%20website&restref=164051"
+              class="inline-block tm-bg-green transition text-white text-xl pt-3 pb-4 px-8 rounded-md"
+            >
+              <i class="fa fa-calendar-plus-o mr-4"></i>
+              Make a Booking
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="functions"
+      class="parallax-window"
+      data-parallax="scroll"
+      data-image-src="img/wine_functions.jpg"
+    >
+      <div class="container mx-auto tm-container pt-24 pb-48 sm:py-48">
+        <div
+          class="flex flex-col lg:flex-row justify-around items-center lg:items-stretch"
+        >
+          <div
+            class="flex-1 rounded-xl px-10 py-12 m-5 bg-white bg-opacity-90 tm-item-container"
+          >
+            <h2 class="text-3xl mb-6 tm-text-green">Function Booking</h2>
+            <p class="mb-6 text-xl leading-8">
+              Interested in hosting your next event in an ambiance of timeless
+              elegance and warm hospitality? Our vintage wine cellar is
+              available for private bookings. Whether it's a personal
+              celebration, corporate gathering, or a wine-tasting event, we can
+              provide a unique and memorable setting for your function. Please
+              fill out the form below with your event details, and our team will
+              be in touch to help plan your perfect occasion.
+            </p>
+            <div class="text-center">
+              <a
+                href="#"
+                class="inline-block text-white text-2xl pl-10 pr-12 py-6 rounded-lg transition tm-bg-green"
+              >
+                <i class="fa fa-camera mr-8"></i>
+                View Gallery
+              </a>
+            </div>
+          </div>
+          <div
+            class="flex-1 rounded-xl p-12 pb-14 m-5 bg-black bg-opacity-50 tm-item-container"
+          >
+            <form action="" method="POST" class="text-lg">
+              <input
+                type="text"
+                name="name"
+                class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold"
+                placeholder="Name"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold"
+                placeholder="Email"
+                required
+              />
+              <input
+                type="tel"
+                name="phone"
+                class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold"
+                placeholder="Phone"
+                required
+              />
+              <textarea
+                rows="6"
+                name="message"
+                class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold"
+                placeholder="Message..."
+              ></textarea>
+              <div>
+                <label
+                  class="input w-full bg-black bg-opacity-0 text-white px-0 py-4 mb-4"
+                >
+                  Provide a range of dates for your function:
+                </label>
+              </div>
+
+              <label
+                for="start-date"
+                class="input w-full bg-black bg-opacity-0 text-white px-0 py-4 mb-4"
+                >Start date:</label
+              >
+              <input type="date" id="start-date" name="start-date" />
+
+              <label
+                for="end-date"
+                class="input w-full bg-black bg-opacity-0 text-white px-0 py-4 mb-4"
+                >End date:</label
+              >
+              <input type="date" id="end-date" name="end-date" />
+              <div class="text-right">
+                <button
+                  type="submit"
+                  class="text-white text-2xl mt-5 wobble hover:text-yellow-500 transition"
+                >
+                  Send it
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="contact"
+      class="parallax-window relative"
+      data-parallax="scroll"
+      data-image-src="img/contact_page.jpg"
+    >
+      <div class="container mx-auto tm-container pt-24 pb-48 sm:py-48">
+        <div
+          class="flex flex-col lg:flex-row justify-around items-center lg:items-stretch"
+        >
+          <div
+            class="flex-1 rounded-xl px-10 py-12 m-5 bg-white bg-opacity-80 tm-item-container"
+          >
+            <h2 class="text-3xl mb-6 tm-text-green">Contact Us</h2>
+            <p class="mb-6 text-lg leading-8">
+              We'd love to hear from you! Please fill out our form with any
+              questions, comments, or feedback, and our team will be in touch.
+              Alternatively, you can contact us directly via phone or email.
+            </p>
+            <p class="mb-10 text-lg">
+              <span class="block mb-2"
+                >Tel:
+                <a
+                  href="tel:(03) 9822 2070"
+                  class="text-grey hover:text-yellow-600 transition"
+                  >(03) 9822 2070</a
+                ></span
+              >
+              <span class="block"
+                >Email:
+                <a
+                  href="mailto:wine@toorakcellars.com.au"
+                  class="text-grey hover:text-yellow-600 transition"
+                  >wine@toorakcellars.com.au</a
+                ></span
+              >
+            </p>
+            <div class="container-iframe">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.4161830551107!2d145.01158641232493!3d-37.85055133602589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad669d7a5730259%3A0xa2a91a479c481aba!2sToorak%20Cellars!5e0!3m2!1sen!2sau!4v1684967404954!5m2!1sen!2sau"
+                class="responsive-iframe"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+          <div
+            class="flex-1 rounded-xl p-12 pb-14 m-5 bg-black bg-opacity-50 tm-item-container"
+          >
+            <form action="" method="POST" class="text-lg">
+              <input
+                type="text"
+                name="name"
+                class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold"
+                placeholder="Name"
+                required
+              />
+              <input
+                type="email"
+                name="email"
+                class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold"
+                placeholder="Email"
+              />
+              <input
+                type="tel"
+                name="phone"
+                class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold"
+                placeholder="Phone"
+                required
+              />
+              <textarea
+                rows="6"
+                name="message"
+                class="input w-full bg-black border-b bg-opacity-0 text-white px-0 py-4 mb-4 tm-border-gold"
+                placeholder="Message..."
+                required
+              ></textarea>
+              <div class="text-right">
+                <button
+                  type="submit"
+                  class="text-white text-2xl wobble hover:text-yellow-500 transition"
+                >
+                  Send it
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <footer class="absolute bottom-0 left-0 w-full">
+          <div
+            class="text-white container mx-auto tm-container p-8 text-lg flex flex-col md:flex-row justify-between"
+          >
+            <span>Copyright 2022 Antique Cafe. All rights reserved.</span>
+            <span class="mt-5 md:mt-0"
+              >Design:
+              <a href="https://www.tooplate.com" target="_parent"
+                >Tooplate</a
+              ></span
+            >
+          </div>
+        </footer>
+      </div>
+    </div>
+
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+    <script src="js/jquery.singlePageNav.min.js"></script>
+    <script>
+      function checkAndShowHideMenu() {
+        if (window.innerWidth < 768) {
+          $("#tm-nav ul").addClass("hidden");
+        } else {
+          $("#tm-nav ul").removeClass("hidden");
+        }
+      }
+
+      $(function () {
+        var tmNav = $("#tm-nav");
+        tmNav.singlePageNav();
+
+        checkAndShowHideMenu();
+        window.addEventListener("resize", checkAndShowHideMenu);
+
+        $("#menu-toggle").click(function () {
+          $("#tm-nav ul").toggleClass("hidden");
+        });
+
+        $("#tm-nav ul li").click(function () {
+          if (window.innerWidth < 768) {
+            $("#tm-nav ul").addClass("hidden");
+          }
+        });
+
+        $(document).scroll(function () {
+          var distanceFromTop = $(document).scrollTop();
+
+          if (distanceFromTop > 100) {
+            tmNav.addClass("scroll");
+          } else {
+            tmNav.removeClass("scroll");
+          }
+        });
+
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+              behavior: "smooth",
+            });
+          });
+        });
+      });
+
+      document
+        .getElementById("wineType")
+        .addEventListener("change", function () {
+          var selectedType = this.value;
+
+          const wineContainer = ".tm-wine-container";
+
+          const wineContainer1 = ".tm-menu-item";
+
+          const wineContainer2 = ".tm-menu-item-2";
+
+          // Get all the wine elements
+          var wines = document.querySelectorAll(
+            wineContainer + ", " + wineContainer1 + "," + wineContainer2
+          );
+
+          // Hide all the wines
+          for (var i = 0; i < wines.length; i++) {
+            wines[i].style.transition = "all 0.5s";
+            wines[i].style.opacity = "0";
+            setTimeout(
+              function (wine) {
+                wine.classList.add("hidden");
+              },
+              500,
+              wines[i]
+            );
+          }
+
+          // If 'all' is selected, show all wines
+          if (selectedType === "all") {
+            for (var i = 0; i < wines.length; i++) {
+              setTimeout(
+                function (wine) {
+                  wine.classList.remove("hidden");
+                  wine.style.opacity = "1";
+                },
+                500,
+                wines[i]
+              );
+            }
+          } else {
+            // Get the wines that match the selected type
+            var matchingWines = document.querySelectorAll(
+              wineContainer +
+                '[data-wine-type="' +
+                selectedType +
+                '"], ' +
+                wineContainer1 +
+                '[data-wine-type="' +
+                selectedType +
+                '"], ' +
+                wineContainer2 +
+                '[data-wine-type="' +
+                selectedType +
+                '"]'
+            );
+
+            // Show only the matching wines
+            for (var i = 0; i < matchingWines.length; i++) {
+              setTimeout(
+                function (wine) {
+                  wine.classList.remove("hidden");
+                  wine.style.opacity = "1";
+                },
+                500,
+                matchingWines[i]
+              );
+            }
+          }
+        });
+
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the image inside the modal
+      var modalImg = document.getElementById("img01");
+
+      // Get the images that open the modal
+      var images = document.getElementsByClassName("tm-menu-image");
+
+      // Assign an onclick event to each image
+      for (let i = 0; i < images.length; i++) {
+        images[i].onclick = function () {
+          modal.style.opacity = 1;
+          modal.style.display = "block";
+          modalImg.src = this.src;
+          document.body.style.overflow = "hidden"; // prevent scrolling (or it breaks lol)
+        };
+      }
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+        document.body.style.overflow = "auto"; // allow scrolling again
+      };
+    </script>
+  </body>
+</html>
