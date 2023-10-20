@@ -1,0 +1,140 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(
+    to bottom right,
+    #ff7f50,
+    #ff4500
+  ); /* Improving the gradient */
+  color: #fff; /* Text color for better visibility */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  border: none;
+  display: flexbox;
+  align-items: center;
+  justify-items: center;
+}
+
+h1,
+h2 {
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+  text-shadow: #ff4500;
+}
+
+.visualisation {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-panel {
+  margin-top: 50px;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Adding a slight overlay to make text more readable */
+  padding: 20px;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+.subtitle {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.info-item label {
+  flex: 1;
+  min-width: 120px;
+  font-weight: bold;
+}
+
+.info-item span,
+.info-item button,
+.info-item input {
+  flex: 2;
+}
+
+.slider-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.info-item:hover {
+  background-color: rgba(0, 50, 0, 0.5);
+  transition: background-color 0.3s ease;
+}
+
+
+
+.vega-bind-name {
+  display: none;
+}
+
+button {
+  background-color: #ff4500;
+  border: none;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #ff7f50;
+}
+
+#animationSpeed {
+  width: 100%;
+  margin-right: 20px;
+  flex-grow: 1;
+}
+
+#datePicker {
+  border: none;
+  background-color: #ff7f50;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#symbol_map {
+
+  left: 100px;
+  right: 100px;
+  margin: auto;
+  position: relative;
+  border: none;
+}
+
+#line_graph {
+  left: 100px;
+  right: 100px;
+  margin: auto;
+  position: relative;
+  border: none;
+}

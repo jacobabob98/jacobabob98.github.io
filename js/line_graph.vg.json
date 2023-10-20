@@ -1,0 +1,29 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": 450,
+  "height": 450,
+  "title": {
+    "text": "Brightness of selected location",
+    "fontSize": 16,
+    "color": "#990000"
+  },
+  "background": "white",
+  "mark": {
+    "type": "point",
+    "fill": "indianred",
+    "stroke": "orangered"
+  },
+  "autosize":"fit-x",
+  "encoding": {
+    "x": {
+      "field": "acq_date",
+      "type": "temporal",
+      "title": "Date"
+    },
+    "y": {
+      "field": "brightness",
+      "type": "quantitative",
+      "title": "Brightness"
+    }
+  }
+}
